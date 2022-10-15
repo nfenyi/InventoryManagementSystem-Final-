@@ -1197,10 +1197,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.paid_orders_panel);
-            this.Controls.Add(this.additem_panel);
             this.Controls.Add(this.updateitems_panel);
             this.Controls.Add(this.deleteitem_panel);
+            this.Controls.Add(this.paid_orders_panel);
+            this.Controls.Add(this.additem_panel);
             this.bunifuTransition2.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

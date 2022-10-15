@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace InventorySystem
 {
-    public partial class Home : Form
+    public partial class Attendant_Screen : Form
     {
         public string ItemList="";
         public float TotalPrice=0;
@@ -20,7 +20,7 @@ namespace InventorySystem
         DateTime dateTime = DateTime.Now;
 
 
-        public Home()
+        public Attendant_Screen()
         {
             InitializeComponent();
         }
@@ -73,9 +73,7 @@ namespace InventorySystem
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
             this.Close();
-            login.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -86,7 +84,7 @@ namespace InventorySystem
                 {
                     ItemList += textBox2.Text + " " + textBox3.Text + " " + " " + priceTxtFld.Text + "*" + qtyTxtFld.Text + Environment.NewLine;
                     TotalPrice += float.Parse(priceTxtFld.Text) * float.Parse(qtyTxtFld.Text);
-                    UpdateQuery += "update spareparts set instock='" + (int.Parse(textBox6.Text) - int.Parse(qtyTxtFld.Text)) + "' where barcode='" + textBox1.Text + "';";
+                    UpdateQuery += "update stock set instock='" + (int.Parse(textBox6.Text) - int.Parse(qtyTxtFld.Text)) + "' where barcode='" + textBox1.Text + "';";
                     String msg = textBox1.Text + " " + textBox2.Text + " " + textBox3.Text + " " + "*" + qtyTxtFld.Text;
                     MessageBox.Show(msg + Environment.NewLine + "Added to Cart");
                 }
@@ -137,7 +135,7 @@ namespace InventorySystem
             try
             {
                 MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-                MySqlDataAdapter sda = new MySqlDataAdapter("select * from spareparts where barcode='" + scanBarcodeTxtFld.Text + "'", conn);
+                MySqlDataAdapter sda = new MySqlDataAdapter("select * from stock where barcode='" + scanBarcodeTxtFld.Text + "'", conn);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGridView1.DataSource = dt;

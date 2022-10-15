@@ -125,7 +125,7 @@ namespace InventorySystem
                 try
                 {
                     MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-                    string query = "insert into `spareparts`(`category`,`name`,`price`,`instock`) values('" + category.Text.Trim() + "','" + name.Text.Trim() + "','" + price.Text.Trim() + "','" + instock.Text.Trim() + "')";
+                    string query = "insert into `stock`(`category`,`name`,`price`,`instock`) values('" + category.Text.Trim() + "','" + name.Text.Trim() + "','" + price.Text.Trim() + "','" + instock.Text.Trim() + "')";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -145,7 +145,7 @@ namespace InventorySystem
             }
             else
             {
-                MessageBox.Show("u should fill the all fields");
+                MessageBox.Show("You should fill the all fields");
             }
         }//add item method end
 
@@ -153,7 +153,7 @@ namespace InventorySystem
         void FillGridView()
         {
             MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-            MySqlDataAdapter sda = new MySqlDataAdapter("select * from spareparts ", conn);
+            MySqlDataAdapter sda = new MySqlDataAdapter("select * from stock ", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             itemlist.DataSource = dt;
@@ -183,7 +183,7 @@ namespace InventorySystem
                 try
                 {
                     MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-                    string query = "update `spareparts` set `category`= '" + u_categoryTxt.Text + "',`name`= '" + u_nameTxt.Text + "',`price`='" + u_priceTxt.Text + "', `instock`= '" + u_stockTxt.Text + "'where `barcode`= '"+ u_itemcodeTxt.Text +"' ";
+                    string query = "update `stock` set `category`= '" + u_categoryTxt.Text + "',`name`= '" + u_nameTxt.Text + "',`price`='" + u_priceTxt.Text + "', `instock`= '" + u_stockTxt.Text + "'where `barcode`= '"+ u_itemcodeTxt.Text +"' ";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -214,7 +214,7 @@ namespace InventorySystem
         void FillUpdateGridView()
         {
             MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-            MySqlDataAdapter u_sda = new MySqlDataAdapter("select * from spareparts ", conn);
+            MySqlDataAdapter u_sda = new MySqlDataAdapter("select * from stock ", conn);
             DataTable u_dt = new DataTable();
             u_sda.Fill(u_dt);
             u_dataGridView.DataSource = u_dt;
@@ -244,7 +244,7 @@ namespace InventorySystem
                 try
                 {
                     MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-                    string query = "delete from `spareparts` where `barcode`= '" + d_itemcodeTxt.Text + "' ";
+                    string query = "delete from `stock` where `barcode`= '" + d_itemcodeTxt.Text + "' ";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -274,7 +274,7 @@ namespace InventorySystem
         void FilldeleteGridView()
         {
             MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-            MySqlDataAdapter d_sda = new MySqlDataAdapter("select * from spareparts ", conn);
+            MySqlDataAdapter d_sda = new MySqlDataAdapter("select * from stock ", conn);
             DataTable d_dt = new DataTable();
             d_sda.Fill(d_dt);
             d_item_dataGridView.DataSource = d_dt;
@@ -381,7 +381,7 @@ namespace InventorySystem
             foreach (DataGridViewColumn column in dgw.Columns)
             {
                 PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, text));
-                cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
                 pdftable.AddCell(cell);
             }
 
@@ -438,7 +438,7 @@ namespace InventorySystem
                 try
                 {
                     MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-                    string query = "insert into `spareparts`(`category`,`name`,`price`,`instock`) values('" + category.Text.Trim() + "','" + name.Text.Trim() + "','" + price.Text.Trim() + "','" + instock.Text.Trim() + "')";
+                    string query = "insert into `stock`(`category`,`name`,`price`,`instock`) values('" + category.Text.Trim() + "','" + name.Text.Trim() + "','" + price.Text.Trim() + "','" + instock.Text.Trim() + "')";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -457,7 +457,7 @@ namespace InventorySystem
             }
             else
             {
-                MessageBox.Show("u should fill the all fields");
+                MessageBox.Show("You should fill the all fields");
             }
         }
 

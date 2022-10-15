@@ -60,7 +60,7 @@ namespace InventorySystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
+            Attendant_Screen home = new Attendant_Screen();
             this.Close();
         }
 
@@ -73,10 +73,14 @@ namespace InventorySystem
 
         private void New_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
+            Attendant_Screen home = new Attendant_Screen();
             home.Show();
             this.Hide();
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

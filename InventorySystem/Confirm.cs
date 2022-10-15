@@ -12,18 +12,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace InventorySystem
 {  
     public partial class Confirm : Form
     {
-        public Home MyParent { get; set; }
+        public Attendant_Screen MyParent { get; set; }
         DateTime dateTime = DateTime.Now;
         public string barcode;
         private PrintDocument docToPrint;
         private string stringToPrint;
         public string receiptContent = "SHOPRITE SHOPPING MALL \nRECEIPT OF SALE\nAddress: Accra Mall, Spintex Road\nTel: +233509428913" +
             "\n\n\n---------------------------------\n";
-        private int total;
+       
 
         public Confirm()
         {
@@ -35,7 +36,8 @@ namespace InventorySystem
         private void Confirm_Load(object sender, EventArgs e)
         {
             richTextBox1.Text = MyParent.ItemList;
-            receiptContent += dateTime.ToString("f") + "\nITEMS\n\n\n---------------------------------\n" + richTextBox1.Text + "\n\n\nTOTAL:" ;
+            richTextBox1.Text += "\n\n\n\nTOTAL: GH₵" + string.Format("{0:f2}", MyParent.TotalPrice) ;
+            receiptContent += dateTime.ToString("f") + "\nITEMS\n\n\n---------------------------------\n" + richTextBox1.Text ;
         }
 
         private void Confirm_FormClosed(object sender, FormClosedEventArgs e)
@@ -49,7 +51,7 @@ namespace InventorySystem
             try
             {
                 UserDetails user = new UserDetails();
-                Home home = new Home();
+                Attendant_Screen home = new Attendant_Screen();
                 string dateTimeHolder = dateTime.ToString("f", DateTimeFormatInfo.InvariantInfo);
                 
                 MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
@@ -63,8 +65,11 @@ namespace InventorySystem
                 myPrintDialog.AllowSelection = true;
                 myPrintDialog.AllowSomePages = true;
                 myPrintDialog.Document = docToPrint;
-                double change = Convert.ToDouble(cashTextBox.Text) - Convert.ToDouble(MyParent.TotalPrice);
-                receiptContent += MyParent.TotalPrice + "\nCash:" +cashTextBox.Text+ "\n" + "Change:" + change +"\n---------------------------------\n\nTHANK YOU!";
+                double changeDoubleHolder = Convert.ToDouble(cashTextBox.Text);
+                double change = changeDoubleHolder - Convert.ToDouble(MyParent.TotalPrice);
+                
+
+                receiptContent += "\nCash: GH₵" + String.Format("{0:f2}",changeDoubleHolder)+ "\n" + "Change: GH₵" + string.Format("{0:f2}", change) +"\n---------------------------------\n\nTHANK YOU!";
                 if (myPrintDialog.ShowDialog() == DialogResult.OK)
                 {
                     StringReader reader = new StringReader(receiptContent);
@@ -114,6 +119,16 @@ namespace InventorySystem
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

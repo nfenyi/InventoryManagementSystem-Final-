@@ -59,6 +59,7 @@
             this.bunifuMetroTextbox2.Size = new System.Drawing.Size(241, 30);
             this.bunifuMetroTextbox2.TabIndex = 11;
             this.bunifuMetroTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuMetroTextbox2.OnValueChanged += new System.EventHandler(this.bunifuMetroTextbox2_OnValueChanged);
             // 
             // bunifuMetroTextbox1
             // 

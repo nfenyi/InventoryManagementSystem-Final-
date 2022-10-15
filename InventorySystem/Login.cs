@@ -60,16 +60,19 @@ namespace InventorySystem
 
                         if ((string)reader["usertype"].ToString() == "attendant")
                         {
-                            Home home = new Home();
-                            this.Hide();
+                            Attendant_Screen home = new Attendant_Screen();
                             home.Show();
+                            bunifuMetroTextbox1.ResetText();
+                            bunifuMetroTextbox2.ResetText();
+
                         }
                        
                         if ((string)reader["usertype"].ToString() == "admin")
                         {
                             AdminScreen admin = new AdminScreen();
-                            this.Hide();
                             admin.Show();
+                            bunifuMetroTextbox1.ResetText();
+                            bunifuMetroTextbox2.ResetText();
                         }
                     }
                 }
@@ -92,6 +95,11 @@ namespace InventorySystem
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bunifuMetroTextbox2_OnValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

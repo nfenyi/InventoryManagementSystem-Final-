@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using MySql.Data.MySqlClient;
 
+
 namespace InventorySystem
 {
     
@@ -46,12 +47,13 @@ namespace InventorySystem
 
         private void changePassword_Click(object sender, EventArgs e)
         {
-            if (newPassword.Text == confirmNewPassword.Text && id != "Selected Item:") 
+            if (newPassword.Text == confirmNewPassword.Text && id != "Selected User Id:") 
             {
                  try
                  {
                      MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-                    string query = "update `users` set `password`= '" + confirmNewPassword.Text + "'where `id` = '" + id +"' ";
+                    Login login = new Login();
+                    string query = "update `users` set `password`= '" + Login.MD5Hash(confirmNewPassword.Text.Trim()) + "'where `id` = '" + id +"' ";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                      conn.Open();
                      cmd.ExecuteNonQuery();

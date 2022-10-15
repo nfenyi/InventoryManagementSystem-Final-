@@ -24,12 +24,7 @@ namespace InventorySystem
         //logout button
         private void logout_btn_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            User_list userlist = new User_list();
-            userlist.Close();
             this.Close();
-            
-            login.Show();
             
         }
 
@@ -64,7 +59,7 @@ namespace InventorySystem
         //The method executes when the user home button clicks
         private void user_home_btn_Click(object sender, EventArgs e)
         {
-            Home user_home = new Home();
+            Attendant_Screen user_home = new Attendant_Screen();
             user_home.Show();
 
         }
@@ -93,7 +88,7 @@ namespace InventorySystem
         //The method executes when the create itemManagement acc button clicks
         private void Mregister_btn_Click(object sender, EventArgs e)
         {
-            if (MfnameTxt.Text != "" && MlnameTxt.Text != "" && MusernameTxt.Text != "" && MphonenumTxt.Text != "" && MpassTxt.Text != "" && MrepassTxt.Text != "")
+            if (MfnameTxt.Text != "" && MlnameTxt.Text != "" && MusernameTxt.Text != "" && MphonenumTxt.Text != "" && MpassTxt.Text != "" && MrepassTxt.Text != "" && typecomboTxt.Text != "")
             {
                 if (MpassTxt.Text == MrepassTxt.Text)
                 {
@@ -179,6 +174,11 @@ namespace InventorySystem
         {
             UserDetails user = new UserDetails();
             label1.Text = user.getUName();
+        }
+
+        private void typecomboTxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

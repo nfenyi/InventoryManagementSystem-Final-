@@ -43,8 +43,6 @@ namespace InventorySystem
 
         private void close_btn_Click(object sender, EventArgs e)
         {
-            AdminScreen admin = new AdminScreen();
-            admin.Show();
             this.Close();
         }
 
@@ -67,7 +65,7 @@ namespace InventorySystem
                 try
                 {
                     MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
-                    string query = "delete from `users` where `barcode`= '" + selectedUserId.Text + "' ";
+                    string query = "delete from `users` where `id`= '" + selectedUserId.Text + "' ";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
