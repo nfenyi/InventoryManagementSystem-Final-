@@ -42,7 +42,7 @@ namespace InventorySystem
         {
             try
             {
-                MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+                MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
                 MySqlDataAdapter sda = new MySqlDataAdapter("select * from users where username='" + bunifuMetroTextbox1.Text.Trim() + "'and password='" + MD5Hash(bunifuMetroTextbox2.Text.Trim()) + "'", conn);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);

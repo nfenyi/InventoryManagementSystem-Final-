@@ -124,7 +124,7 @@ namespace InventorySystem
             {
                 try
                 {
-                    MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+                    MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
                     string query = "insert into `stock`(`category`,`name`,`price`,`instock`) values('" + category.Text.Trim() + "','" + name.Text.Trim() + "','" + price.Text.Trim() + "','" + instock.Text.Trim() + "')";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     conn.Open();
@@ -152,7 +152,7 @@ namespace InventorySystem
         /*The function tht fills the datagridview*/
         void FillGridView()
         {
-            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
             MySqlDataAdapter sda = new MySqlDataAdapter("select * from stock ", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -182,7 +182,7 @@ namespace InventorySystem
             {
                 try
                 {
-                    MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+                    MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
                     string query = "update `stock` set `category`= '" + u_categoryTxt.Text + "',`name`= '" + u_nameTxt.Text + "',`price`='" + u_priceTxt.Text + "', `instock`= '" + u_stockTxt.Text + "'where `barcode`= '"+ u_itemcodeTxt.Text +"' ";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     conn.Open();
@@ -213,7 +213,7 @@ namespace InventorySystem
         /*The function that fills the datagridview*/
         void FillUpdateGridView()
         {
-            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
             MySqlDataAdapter u_sda = new MySqlDataAdapter("select * from stock ", conn);
             DataTable u_dt = new DataTable();
             u_sda.Fill(u_dt);
@@ -243,7 +243,7 @@ namespace InventorySystem
             {
                 try
                 {
-                    MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+                    MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
                     string query = "delete from `stock` where `barcode`= '" + d_itemcodeTxt.Text + "' ";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     conn.Open();
@@ -273,7 +273,7 @@ namespace InventorySystem
         /*The function that fills delete the datagridview*/
         void FilldeleteGridView()
         {
-            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
             MySqlDataAdapter d_sda = new MySqlDataAdapter("select * from stock ", conn);
             DataTable d_dt = new DataTable();
             d_sda.Fill(d_dt);
@@ -303,7 +303,7 @@ namespace InventorySystem
         void FillPaidGridView()
         {
            
-            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
             MySqlDataAdapter p_sda = new MySqlDataAdapter("select id,user,details,price,date from orders ", conn);
             DataTable p_dt = new DataTable();
             p_sda.Fill(p_dt);
@@ -332,7 +332,7 @@ namespace InventorySystem
                     DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear purchases?", "Some Title", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+                        MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
                         string query = "delete * from `orders`";
                         MySqlCommand cmd = new MySqlCommand(query, conn);
                         conn.Open();
@@ -437,7 +437,7 @@ namespace InventorySystem
             {
                 try
                 {
-                    MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+                    MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
                     string query = "insert into `stock`(`category`,`name`,`price`,`instock`) values('" + category.Text.Trim() + "','" + name.Text.Trim() + "','" + price.Text.Trim() + "','" + instock.Text.Trim() + "')";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     conn.Open();

@@ -34,7 +34,7 @@ namespace InventorySystem
             try
             {
                 string dateTimeHolder = dateTime.ToString("D", DateTimeFormatInfo.InvariantInfo) + "%";
-                MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+                MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
                 MySqlDataAdapter sda = new MySqlDataAdapter("SELECT id,details,price FROM `orders` where user ='"+label9.Text+"' and date like '"+ dateTimeHolder + "'", conn);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);

@@ -24,7 +24,7 @@ namespace InventorySystem
         //fill grid view method
         void Filluserlist()
         {
-            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
             MySqlDataAdapter list = new MySqlDataAdapter("select id,first,last,username,phone,usertype from users ", conn);
             DataTable dtlist = new DataTable();
             list.Fill(dtlist);
@@ -64,7 +64,7 @@ namespace InventorySystem
             {
                 try
                 {
-                    MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+                    MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
                     string query = "delete from `users` where `id`= '" + selectedUserId.Text + "' ";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     conn.Open();
@@ -89,7 +89,7 @@ namespace InventorySystem
         /*The function that fills the delete datagridview*/
         void FilldeleteGridView()
         {
-            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
             MySqlDataAdapter d_sda = new MySqlDataAdapter("select * from users ", conn);
             DataTable d_dt = new DataTable();
             d_sda.Fill(d_dt);
@@ -104,7 +104,7 @@ namespace InventorySystem
         }
         void FillUpdateGridView()
         {
-            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+            MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
             MySqlDataAdapter u_sda = new MySqlDataAdapter("select * from users ", conn);
             DataTable u_dt = new DataTable();
             u_sda.Fill(u_dt);

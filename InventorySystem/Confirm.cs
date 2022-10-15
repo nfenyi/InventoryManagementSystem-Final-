@@ -54,7 +54,7 @@ namespace InventorySystem
                 Attendant_Screen home = new Attendant_Screen();
                 string dateTimeHolder = dateTime.ToString("f", DateTimeFormatInfo.InvariantInfo);
                 
-                MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+                MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
                 string query = "insert into `orders`(`user`,`date`,`details`,`price`) values('" + user.getUName() + "','"+ dateTimeHolder +"','" + MyParent.ItemList + "'," + MyParent.TotalPrice + ");" + MyParent.UpdateQuery + "";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 conn.Open();

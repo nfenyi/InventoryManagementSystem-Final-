@@ -51,7 +51,7 @@ namespace InventorySystem
             {
                  try
                  {
-                     MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventorymgcsharp;");
+                     MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
                     Login login = new Login();
                     string query = "update `users` set `password`= '" + Login.MD5Hash(confirmNewPassword.Text.Trim()) + "'where `id` = '" + id +"' ";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
