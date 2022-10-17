@@ -333,7 +333,7 @@ namespace InventorySystem
                     if (dialogResult == DialogResult.Yes)
                     {
                         MySqlConnection conn = new MySqlConnection(@"datasource=127.0.0.1;port=3306;SslMode=none;username=root;password=;database=inventory;");
-                        string query = "delete * from `orders`";
+                        string query = "delete from `orders` where `id`= '" + p_order_idTxt.Text + "' ";
                         MySqlCommand cmd = new MySqlCommand(query, conn);
                         conn.Open();
                         cmd.ExecuteNonQuery();

@@ -37,7 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.logout_btn = new System.Windows.Forms.Button();
             this.administratorLabel = new System.Windows.Forms.Label();
             this.slide_panel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -129,7 +128,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkRed;
-            this.panel1.Controls.Add(this.logout_btn);
             this.panel1.Controls.Add(this.administratorLabel);
             this.panel1.Controls.Add(this.slide_panel);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -145,24 +143,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(206, 640);
             this.panel1.TabIndex = 49;
-            // 
-            // logout_btn
-            // 
-            this.logout_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bunifuTransition1.SetDecoration(this.logout_btn, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuTransition2.SetDecoration(this.logout_btn, BunifuAnimatorNS.DecorationType.None);
-            this.logout_btn.FlatAppearance.BorderSize = 0;
-            this.logout_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.logout_btn.ForeColor = System.Drawing.Color.White;
-            this.logout_btn.Location = new System.Drawing.Point(29, 136);
-            this.logout_btn.Margin = new System.Windows.Forms.Padding(2);
-            this.logout_btn.Name = "logout_btn";
-            this.logout_btn.Size = new System.Drawing.Size(110, 30);
-            this.logout_btn.TabIndex = 62;
-            this.logout_btn.Text = "Sign Out";
-            this.logout_btn.UseVisualStyleBackColor = false;
-            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
             // administratorLabel
             // 
@@ -786,7 +766,7 @@
             // 
             // del_item_btn
             // 
-            this.del_item_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.del_item_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.bunifuTransition1.SetDecoration(this.del_item_btn, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition2.SetDecoration(this.del_item_btn, BunifuAnimatorNS.DecorationType.None);
             this.del_item_btn.FlatAppearance.BorderColor = System.Drawing.Color.Green;
@@ -1197,10 +1177,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.updateitems_panel);
             this.Controls.Add(this.deleteitem_panel);
             this.Controls.Add(this.paid_orders_panel);
             this.Controls.Add(this.additem_panel);
+            this.Controls.Add(this.updateitems_panel);
             this.bunifuTransition2.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1254,7 +1234,6 @@
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.TextBox category;
         private System.Windows.Forms.TextBox itemcode;
-        private System.Windows.Forms.Button logout_btn;
         private BunifuAnimatorNS.BunifuTransition bunifuTransition1;
         private BunifuAnimatorNS.BunifuTransition bunifuTransition2;
         private System.Windows.Forms.DataGridView u_dataGridView;

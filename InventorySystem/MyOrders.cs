@@ -27,6 +27,14 @@ namespace InventorySystem
             label9.Text = user.getUName();
             
             FillOrders();
+            textBox1.Text = "0";
+            foreach (DataGridViewRow item in dataGridView1.Rows) 
+            {
+            int n = item.Index;
+                textBox1.Text = (Double.Parse(textBox1.Text.ToString()) + 
+                    Double.Parse(dataGridView1.Rows[n].Cells[2].Value.ToString())).ToString();
+            }
+            textBox1.Text = "Total Daily Sales: GH₵" + textBox1.Text;
         }
 
         void FillOrders()
