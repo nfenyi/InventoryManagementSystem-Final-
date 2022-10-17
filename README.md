@@ -23,7 +23,7 @@ Password: akofah
 
 * The work was done long ago as seen in the screenrecording , but i later found out i made the wrong commit so my latest commit looks recent.
 
-* I later added i feature that lets the attendant see their total sales for the day.
+* I later added a feature that lets the attendant see their total sales for the day.
 
 ## Screen Recording
 
