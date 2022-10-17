@@ -2,6 +2,8 @@
 
 ## Extremely Important
 
+* The work was done long ago as seen in the screenrecording(screen recording was done on Sep 10th as seen in the Loom webpage and the taskbar in the video) , but i later found out i made the wrong commit so my latest commit looks recent.
+
 - Please open this link to download bunifu to the project bin folder before running it: 
   [Bunifu Add-on](https://drive.google.com/file/d/16jE_mPcmOCIZGA4hrxK-VM-JtG-97xV7/view?usp=sharing). Paste it in the following directory: InventoryManagementSystem-Final--master\InventorySystem\bin\Debug
 
@@ -28,9 +30,7 @@ Password: akofah
 
 * The daily sales report on the attendant's side resets everyday but is permanent for the administrator.
 
-* The work was done long ago as seen in the screenrecording , but i later found out i made the wrong commit so my latest commit looks recent.
-
-* I later added a feature that lets the attendant see their total sales for the day.
+* I later added a feature that lets the attendant see their total sales for the day which will notbe seen in the video.
 
 ## Screen Recording
 
