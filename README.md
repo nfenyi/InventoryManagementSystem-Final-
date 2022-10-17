@@ -1,5 +1,12 @@
 # Shoprite Inventory Management System
 
+## Extremely Important
+
+- Please open this link to add bunifu to the project bin folder before running it.
+  [Bunifu Add-on](https://drive.google.com/file/d/16jE_mPcmOCIZGA4hrxK-VM-JtG-97xV7/view?usp=sharing)
+
+- Also double-click Shoprite Inventory Management System.sln (should be the last item in the list) from the Solution Explorer before running the code.
+
 ## Logins
 
 Administrator
